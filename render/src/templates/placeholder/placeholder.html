@@ -1,0 +1,9 @@
+<template>
+    <div class="empty open-slideout c-hand" click.delegate="toggleMenu()" class.bind="shared.selectedServer.server.database ? 'hidden' : ''">
+        <div class="empty-icon">
+            <i class="far fa-folder-open"></i>
+        </div>
+        <p class="empty-title h5">You have not selected a server yet.</p>
+        <p class="empty-subtitle">To select a server, click the menu button on the left side and add a server.</p>
+    </div>
+</template>

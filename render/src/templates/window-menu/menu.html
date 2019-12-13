@@ -1,0 +1,16 @@
+<template>
+    <div class="win-menu">
+        <span class="logo">Camino</span>
+        <span class="header-text">
+        <span class="text-padding">${shared.selectedServer.server.name}</span>
+        <span class="purple">|</span>
+        <span class="text-padding">${shared.selectedServer.server.database}</span>
+        <span class="purple">|</span>
+        <span class="text-padding">${shared.selectedServer.server.address}</span>
+        </span>
+        <i click.delegate="closeWindow()" class="float-right menu-item far fa-window-close"></i>
+        <i click.delegate="maximizeWindow()" class.bind="maximized ? 'hidden' : ''" class="float-right menu-item far fa-window-maximize"></i>
+        <i click.delegate="unMaximizeWindow()" class.bind="maximized ? '' : 'hidden'" class="float-right menu-item fas fa-window-maximize"></i>
+        <i click.delegate="minimizeWindow()" class="float-right menu-item far fa-window-minimize"></i>
+    </div>
+<template>

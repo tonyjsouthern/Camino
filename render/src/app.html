@@ -1,0 +1,44 @@
+<template>
+
+    <require from="./templates/window-menu/menu"></require>
+    <menu shared.bind="shared"></menu>
+
+    <require from="./templates/modals/add-server-modal/add-server"></require>
+    <add-server shared.bind="shared"></add-server>
+
+    <require from="./templates/modals/edit-server-modal/edit-server"></require>
+    <edit-server shared.bind="shared"></edit-server>
+
+    <div class="error-message" class.bind="shared.connectError ? '' : 'hidden'">
+        <div class="toast toast-primary">
+            <button class="btn btn-clear float-right" click.delegate="shared.connectError = ''"></button>
+            ${shared.connectError}
+        </div>
+    </div>
+
+    <nav id="menu">
+        <require from="./templates/server-menu/server-menu"></require>
+        <server-menu menu.bind="menu" shared.bind="shared"></server-menu>
+    </nav>
+
+    <main id="panel">
+        <require from="./templates/tool-menu/tool-menu"></require>
+        <tool-menu shared.bind="shared"></tool-menu>
+
+        <div class="container container-2">
+            <div class="column-wrap animated fadeIn">
+
+                <require from="./templates/placeholder/placeholder"></require>
+                <placeholder shared.bind="shared"></placeholder>
+
+                <div id="editor-cont" class.bind="shared.selectedServer.server.database ? '' : 'deep'">
+                    <require from="./templates/text-editor/text-editor"></require>
+                    <text-editor shared.bind="shared"></text-editor>
+                </div>
+                <div id="table-plugin" class="column col column-sql-results" class.bind="shared.selectedServer.server.database ? '' : 'hidden'">
+                    <require from="./templates/query-results/query-results"></require>
+                    <query-results shared.bind="shared"></query-results>
+                </div>
+            </div>
+    </main>
+</template>

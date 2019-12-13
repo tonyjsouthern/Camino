@@ -1,0 +1,32 @@
+<template>
+  <div class="modal" class.bind="shared.editServerVisible ? 'active' : ''" id="modal-id">
+   <a class="modal-overlay" click.delegate="shared.editServerVisible = false" aria-label="Close"></a>
+   <div class="modal-container">
+      <div class="modal-header">
+         <a class="btn btn-clear float-right" aria-label="Close" click.delegate="info.visible = false"></a>
+         <div class="modal-title h5">${shared.editServer.name}</div>
+      </div>
+      <div class="modal-body">
+         <div class="content">
+            <div class="form-group">
+               <label class="form-label" for="input-2">Server Address</label>
+               <input class="form-input" type="text" id="input-2" value.bind="shared.editServer.address" placeholder="1.0.0.127">
+            </div>
+            <div class="form-group">
+               <label class="form-label" for="input-3">Username</label>
+               <input class="form-input" type="text" id="input-3" value.bind="shared.editServer.username" placeholder="tj.southern">
+            </div>
+            <div class="form-group">
+               <label class="form-label" for="input-4">Password</label>
+               <input class="form-input" type="text" id="input-4" value.bind="shared.editServer.password" placeholder="********">
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button class="btn btn-primary" click.delegate="endEditServer()">Save Changes</button>
+            <button class="btn btn-primary" click.delegate="removeServer()">Delete</button>
+            <button class="btn" click.delegate="shared.editServerVisible = false">Cancel</button>
+         </div>
+      </div>
+   </div>
+   </div>
+</template>

@@ -1,0 +1,36 @@
+<template>
+    <ul class="menu animated fadeIn" class.bind="showServerList ? 'hidden' : ''">
+        <li class="divider" data-content="Servers">
+        </li>
+        <li class="menu-item animated fadeIn" repeat.for="server of shared.serverArray">
+            <a href="#">
+                <i class="icon icon-link"></i> ${server.name}
+                <i class="fas fa-plug" click.delegate="getDbs($event)"></i>
+                <i class="fas fa-cog" click.delegate="editServer($event)"></i>
+            </a>
+        </li>
+        <div id="button-cont" class="button-cont">
+            <button class="btn btn-primary add-server-button animated fadeIn" click.delegate="shared.showAddModal = true">Add Server</button>
+        </div>
+    </ul>
+    <div class="button-cont-2">
+        <button class="btn btn-primary animated fadeIn faster slideout-button" class.bind="showServerList ? '' : 'hidden'" click.delegate="showServerList = false">Show Servers</button>
+    </div>
+    <ul class="database-menu menu" class.bind="showServerList ? '' : 'hidden'">
+        <li class="divider" data-content="Databases">
+        </li>
+        <li class="nav-item margin-bottom">
+            <input class="input search-input" placeholder="Search" value.bind="menu.dbSearchInput" keyup.trigger="searchForDatabase()"><i class="fas fa-search fa-rotate-360"></i>
+        </li>
+        <li class="menu-item animated fadeIn" repeat.for="database of menu.filteredDbs" class.bind="menu.dbSearchInput ? '' : 'hidden'">
+            <a class="text-ellipsis" click.delegate="selectDatabase($event)">
+                <i class="icon icon-link"></i> ${database.name}
+            </a>
+        </li>
+        <li class="menu-item animated fadeIn" repeat.for="database of menu.databaseArray" class.bind="menu.dbSearchInput ? 'hidden' : ''">
+            <a class="text-ellipsis" click.delegate="selectDatabase($event)">
+                <i class="icon icon-link"></i> ${database.name}
+            </a>
+        </li>
+    </ul>
+</template>

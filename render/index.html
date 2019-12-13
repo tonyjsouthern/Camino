@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Camino</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/codemirror.css">
+    <link rel="stylesheet" href="./src/css/duotone-light.css">
+    <link rel="stylesheet" href="./src/css/table.css">
+    <link rel="stylesheet" href="./src/css/spectre.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+    <link rel="stylesheet" href="./src/css/animate.css">
+
+    <script>
+      var remote = require('electron');
+      window.ipc = require('electron').ipcRenderer;
+    </script>
+  </head>
+
+  <link href="https://unpkg.com/tabulator-tables@4.2.7/dist/css/tabulator.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.2.7/dist/js/tabulator.min.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.js"></script>
+
+  <body aurelia-app="main">
+    <script src="scripts/vendor-bundle.js"></script>
+    <script>SystemJS.import("aurelia-bootstrapper").catch(function(err) { console.log(err); })</script>
+  </body>
+</html>

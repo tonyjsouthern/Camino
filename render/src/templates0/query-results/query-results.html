@@ -1,0 +1,17 @@
+<template>
+
+  <table class="table is-bordered is-striped is-narrow is-hoverable" class.bind="shared.error ? 'hidden' : ''">
+     <thead>
+        <tr>
+           <th width="100px" class="cell-width" repeat.for="key of shared.keys">${key}</th>
+        </tr>
+     </thead>
+     <tr width="100px"  class="cell-width" repeat.for="result of shared.results">
+        <td width="100px" class="cell-width" repeat.for="item of result">${item}</td>
+     </tr>
+  </table>
+
+  <div class="">
+    <p class="text-error">${shared.error.message}</p>
+    </div>
+  </template>
