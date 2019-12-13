@@ -27,13 +27,6 @@ app.on('ready', function() {
   createWindow()
 });
 
-// Close the app
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
-
 app.on('activate', () => {
   if (win === null) {
     createWindow()
@@ -52,7 +45,6 @@ var scope = {
     }
   }
 }
-
 // ROUTES
 ipcMain.on('auth-getdbs', async (event, arg) => {
     var results = await handlers.getDbs(event, arg, scope);
@@ -78,4 +70,9 @@ ipcMain.on('maximize-window', event =>{
 ipcMain.on('un-maximize-window', event =>{
   event.preventDefault();
   win.unmaximize();
+})
+
+ipcMain.on('close-window', event =>{
+  event.preventDefault();
+  app.quit()
 })
