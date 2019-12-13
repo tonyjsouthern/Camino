@@ -18,7 +18,7 @@ export class App {
     this.shared = {
       serverArray: [],
       selectedServer: {
-        limited: true
+        limited: false
       },
       editServer: {},
       editServerVisible: false,
