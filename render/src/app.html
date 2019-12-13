@@ -16,6 +16,18 @@
     </nav>
 
     <main id="panel">
+
+      <!-- MODALS BEGIN -->
+      <require from="./templates/modals/add-server-modal/add-server"></require>
+      <add-server shared.bind="shared"></add-server>
+
+      <require from="./templates/modals/edit-server-modal/edit-server"></require>
+      <edit-server shared.bind="shared"></edit-server>
+
+      <require from="./templates/modals/settings-modal/settings"></require>
+      <settings shared.bind="shared"></settings>
+      <!-- MODALS END -->
+      
         <require from="./templates/tool-menu/tool-menu"></require>
         <tool-menu shared.bind="shared"></tool-menu>
 
@@ -35,16 +47,4 @@
                 </div>
             </div>
     </main>
-
-<!-- MODALS BEGIN -->
-<require from="./templates/modals/add-server-modal/add-server"></require>
-<add-server shared.bind="shared"></add-server>
-
-<require from="./templates/modals/edit-server-modal/edit-server"></require>
-<edit-server shared.bind="shared"></edit-server>
-
-<require from="./templates/modals/settings-modal/settings"></require>
-<settings shared.bind="shared"></settings>
-<!-- MODALS END -->
-
 </template>

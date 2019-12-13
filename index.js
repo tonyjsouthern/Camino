@@ -1,6 +1,6 @@
 // Module Imports
 const {app,BrowserWindow,ipcMain,remote} = require('electron')
-
+const { autoUpdater } = require('electron-updater');
 var handlers        = require('./routelist.js');
 var dns             = require('dns').promises;
 var path            = require('path');
@@ -24,6 +24,7 @@ function createWindow () {
 
 // List for the app to be ready and check for updates
 app.on('ready', function() {
+  autoUpdater.checkForUpdatesAndNotify();
   createWindow()
 });
 
@@ -76,3 +77,14 @@ ipcMain.on('close-window', event =>{
   event.preventDefault();
   app.quit()
 })
+
+autoUpdater.on('update-available', () => {
+  mainWindow.webContents.send('update_available');
+});
+autoUpdater.on('update-downloaded', () => {
+  mainWindow.webContents.send('update_downloaded');
+});
+
+ipcMain.on('restart_app', () => {
+  autoUpdater.quitAndInstall();
+});

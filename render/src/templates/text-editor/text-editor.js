@@ -10,7 +10,7 @@ export class TextEditor {
 
   setEditor(){
     this.shared.editor = CodeMirror(document.getElementById('editor-cont'), {
-      value: "select count(*) from customer",
+      value: "select count(*) from rsk_customers",
       mode:  "sql",
       theme: "duotone-light",
       lineNumbers: true

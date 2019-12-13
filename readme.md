@@ -8,6 +8,7 @@ Camino is an Electron and Aurelia JS based ligthweight SQL client.
 - Highlight based SQL querying
 - Add/Remove/Edit SQL servers
 - Search databases
+- Automatic Query Limiter
 
 ### Future Development:
 - Tabbed Server Usage
