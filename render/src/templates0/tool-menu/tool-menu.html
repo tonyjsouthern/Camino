@@ -6,6 +6,8 @@
                 <a class="btn btn-primary animated fadeIn" click.delegate="runSql()" class.bind="shared.selectedServer.server.database ? '' : 'hidden'" id="execute"><i class="fas fa-play"></i></a>
                 <a class="btn" click.delegate="shared.selectedServer.limited ? shared.selectedServer.limited = false : shared.selectedServer.limited = true"
                 class.bind="shared.selectedServer.limited ? 'btn-primary' : ''" id="execute"><i class="fas fa-arrows-alt-v"></i></a>
+                <a id="settings-button" class="btn btn-primary"><i class="fas fa-cog"></i></a>
+
             </div>
         </div>
     </div>

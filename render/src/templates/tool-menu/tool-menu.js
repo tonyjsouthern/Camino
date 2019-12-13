@@ -29,7 +29,6 @@ export class ToolMenu {
         var query = this.checkForSelection();
         this.shared.selectedServer.queries = query;
         this.resetResults();
-        console.log(this.shared.selectedServer)
         var resultString = await this.BackendService.runQuery(this.shared.selectedServer);
         var result = JSON.parse(resultString);
         if (result.message == undefined) {
