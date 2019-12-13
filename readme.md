@@ -1,6 +1,8 @@
-##Camino
+## Camino
 
-Camino is an Electron and Aurelia JS based SQL client.  
+Camino is an Electron and Aurelia JS based ligthweight SQL client.  
+
+![Camino Screenshot](https://i.imgur.com/YTjJuke.png)
 
 ### Current Features:
 - Highlight based SQL querying
@@ -9,14 +11,9 @@ Camino is an Electron and Aurelia JS based SQL client.
 
 ### Future Development:
 - Tabbed Server Usage
-- Support for other database types(Postgres, MySQL, etc.)
 - Database Table Viewer
-- Keybinds
+- Keybinds (F5 for run query is only supported now)
 - Automatic Update
-
-### Download:
-Camino can be download from the following website:
-www.tjsouthern.com/camino
 
 ### Installation
 1) Download and install node.js from https://nodejs.org/en/download/
