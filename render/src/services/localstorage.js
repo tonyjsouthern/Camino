@@ -36,7 +36,7 @@ export class LocStor {
     var allStorage = this.getAllItems();
     Object.entries(localStorage).forEach(
       ([key, value]) => {
-        if (JSON.parse(value).server == undefined) {
+        if (JSON.parse(value).server == undefined && key != 'settings') {          
           serverArray.push(JSON.parse(value))
         }
       }

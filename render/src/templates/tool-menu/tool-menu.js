@@ -28,6 +28,8 @@ export class ToolMenu {
         document.getElementById("execute").classList.add("loading");
         var query = this.checkForSelection();
         this.shared.selectedServer.queries = query;
+        this.shared.selectedServer.limit = this.shared.settings.limiter;
+        console.log(this.shared.selectedServer)
         this.resetResults();
         var resultString = await this.BackendService.runQuery(this.shared.selectedServer);
         var result = JSON.parse(resultString);

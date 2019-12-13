@@ -26,7 +26,10 @@ export class App {
       results: [],
       editor: '',
       error: '',
-      connectError: ''
+      connectError: '',
+      defaultSettings: {
+        limiter: "150"
+      }
     }
 
   }

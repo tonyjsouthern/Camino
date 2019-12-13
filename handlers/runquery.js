@@ -11,7 +11,7 @@ function runQuery(event, arg, scope) {
 
     function queryLimiter(string) {
         if (arg.limited == true) {
-            var limit = 'top 150';
+            var limit = 'top ' + arg.limit;
             var stringArray = string.split(" ");
             var compiledString = '';
             for (var i = 0; i < stringArray.length; i++) {
@@ -29,6 +29,7 @@ function runQuery(event, arg, scope) {
 
     async function executeSql() {
         try {
+          console.log(arg)
             await scope.mssql.connect(config);
             var result = await scope.mssql.query(queryLimiter(query));
             await scope.mssql.close();
