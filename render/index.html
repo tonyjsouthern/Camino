@@ -14,44 +14,11 @@
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/animate.css">
 
-    <div id="notification" class="">
-      <p id="message"></p>
-      <button id="close-button" onClick="closeNotification()">
-        Close
-      </button>
-      <button id="restart-button" onClick="restartApp()" class="hidden">
-        Restart
-      </button>
-
-
-
     </div>
     <script>
       var remote = require('electron');
       window.ipc = require('electron').ipcRenderer;
 
-
-      const notification = document.getElementById('notification');
-const message = document.getElementById('message');
-const restartButton = document.getElementById('restart-button');
-window.ipc.on('update_available', () => {
-  window.ipc.removeAllListeners('update_available');
-  message.innerText = 'A new update is available. Downloading now...';
-  notification.classList.remove('hidden');
-});
-window.ipc.on('update_downloaded', () => {
-  window.ipc.removeAllListeners('update_downloaded');
-  message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
-  restartButton.classList.remove('hidden');
-  notification.classList.remove('hidden');
-});
-
-function closeNotification() {
-  notification.classList.add('hidden');
-}
-function restartApp() {
-  window.ipc.send('restart_app');
-}
     </script>
   </head>
 

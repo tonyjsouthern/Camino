@@ -4,6 +4,11 @@ Main Yellow: #f7f8f9
 Grey: #323031
 Red: #DB3A34
 */
+
+.hidden {
+  display: none;
+}
+
 .cell-width {
   width: 100px !important;
   overflow: hidden !important;
@@ -23,6 +28,10 @@ body{
   margin-bottom: 10px !important;
 }
 
+.bottom-five{
+  margin-bottom: 5px !important;
+}
+
 .search-input {
   position: absolute;
   width: 94%;
@@ -38,6 +47,10 @@ body{
   height: 100%;
   overflow: scroll !important;
   font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
+}
+
+.updates {
+  margin-top: 20px;
 }
 
 .deep {

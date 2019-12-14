@@ -24,15 +24,9 @@ function createWindow () {
 
 // List for the app to be ready and check for updates
 app.on('ready', function() {
-  autoUpdater.checkForUpdatesAndNotify();
   createWindow()
+  autoUpdater.checkForUpdates();
 });
-
-app.on('activate', () => {
-  if (win === null) {
-    createWindow()
-  }
-})
 
 // Middleware for passing in global variables
 var scope = {
@@ -78,13 +72,12 @@ ipcMain.on('close-window', event =>{
   app.quit()
 })
 
-autoUpdater.on('update-available', () => {
-  mainWindow.webContents.send('update_available');
-});
-autoUpdater.on('update-downloaded', () => {
-  mainWindow.webContents.send('update_downloaded');
+// Trigger update ready message
+autoUpdater.on('update-downloaded', (info) => {
+    win.webContents.send('updateReady')
 });
 
-ipcMain.on('restart_app', () => {
-  autoUpdater.quitAndInstall();
-});
+// Quit the application and install the update
+ipcMain.on("quitAndInstall", (event, arg) => {
+    autoUpdater.quitAndInstall();
+})
