@@ -20,7 +20,7 @@
     "electron-rebuild": "^1.8.4"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dotenv": "^6.2.0",
     "electron-builder-squirrel-windows": "^20.41.0",
     "electron-updater": "^4.0.6",
